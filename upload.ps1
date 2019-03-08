@@ -98,7 +98,8 @@ $button_Click = {
 
             write-host ("`t" + "$filename" + "`t" +"$bucket$prefix"+"`t"+ "$shortfilename")
             python.exe "C:\Install\s3cmd-2.0.2\s3cmd" "put" "$filename" "$bucket$prefix$shortfilename"
-            write-host ("`t" + $i.Name +"$bucketlocation$prefix$shortfilename")
+            write-host ("`t" + $i.Name +" "+"$bucketlocation$prefix$shortfilename")
+            Set-Clipboard -Value "$bucketlocation$prefix$shortfilename"
         }
 	}
 
